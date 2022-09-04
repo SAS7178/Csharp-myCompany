@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-
 
 namespace Classes
 {
@@ -8,50 +6,48 @@ namespace Classes
     {
         static void Main(string[] args)
         {
-    //         // Create an instance of a company. Name it whatever you like.
-    //    public Company myCompany = new Company("FitGen", new DateTime());
-        Company MyCompany = new Company()
-        {
-             Name = "FitGen",
-             CreatedOn = new DateTime(),
-             Employees = new List<Employee>{},  
-        };
-
+            // Create an instance of a company. Name it whatever you like.
+            Company MyCompany = new Company()
+            {
+                Name = "FitGen",
+                CreatedOn = new DateTime(),
+                Employees = new List<Employee>(),
+            };
             // Create three employees
-         Employee John = new Employee()
-        {
-             FirstName = "John",
-             LastName = "Smith",
-             Title = "Electrician",  
-        };
-         Employee Amy = new Employee()
-        {
-             FirstName = "Amy",
-             LastName = "Thompson",
-             Title = "Designer",  
-        };
-         Employee James = new Employee()
-        {
-             FirstName = "James",
-             LastName = "Hoyt",
-             Title = "Human Resources",  
-        };
-           // Assign the employees to the company
-            List<Employee> employees = new List<Employee>();
-        employees.Add(John);
-        employees.Add(Amy);
-        employees.Add(James);
+                 List<Employee> EmployeeList = new List<Employee>();
+            
+                Employee John = new Employee()
+                {
+                    firstName = "John",
+                    lastName = "Smith",
+                    Title = "Electrician",
+                };
+                Employee J = new Employee()
+                {
+                    firstName = "J",
+                    lastName = "S",
+                    Title = "E",
+                };
+                Employee Jo = new Employee()
+                {
+                    firstName = "Jo",
+                    lastName = "Smit",
+                    Title = "Elect",
+                };
+            EmployeeList.Add(John);
+            EmployeeList.Add(J);
+            EmployeeList.Add(Jo);
 
+            // Assign the employees to the company
+                MyCompany.Employees = EmployeeList;
             /*
                 Iterate the company's employee list and generate the
                 simple report shown above
             */
-        //         void ListEmployees()
-        // {
-        //     foreach(Employee Employee in employees)
-        //     System.Console.WriteLine($"{Employee.FirstName} works for  as {Employee.Title} since {Employee.StartDate}");
-        // }
-        Console.WriteLine();
+            foreach (Employee employee in MyCompany.Employees)
+            {
+            Console.WriteLine($"{employee.firstName} {employee.lastName} works for {MyCompany.Name} as a {employee.Title} since {employee.startDate}.");
+            }
         }
     }
 }
